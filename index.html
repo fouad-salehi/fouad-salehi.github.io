@@ -187,6 +187,84 @@
   }
   .socials svg { width: 22px; height: 22px; fill: currentColor; }
 
+  .projects {
+    padding: 40px 20px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  .projects .section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #c4b5fd, #f472b6, #818cf8);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s linear infinite;
+  }
+  .projects .section-subtitle {
+    text-align: center;
+    color: #8a8ab0;
+    font-size: 0.88rem;
+    margin-bottom: 38px;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+  }
+  .project-card {
+    display: block;
+    padding: 22px 20px;
+    background: rgba(21, 21, 29, 0.55);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    backdrop-filter: blur(12px);
+    transition: transform 0.25s ease, border-color 0.25s ease,
+                box-shadow 0.25s ease, background 0.25s ease;
+    animation: fadeUp 0.6s ease both;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 30, 45, 0.85);
+    border-color: rgba(167, 139, 250, 0.55);
+    box-shadow: 0 14px 34px rgba(124, 58, 237, 0.28);
+  }
+  .project-card .p-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e0d7ff;
+    letter-spacing: 0.2px;
+    margin-bottom: 8px;
+  }
+  .project-card .p-name::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a78bfa, #f472b6);
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+    flex-shrink: 0;
+  }
+  .project-card .p-desc {
+    font-size: 0.82rem;
+    color: #9a9ab8;
+    line-height: 1.75;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   footer {
     text-align: center;
     padding: 26px 20px;
@@ -219,6 +297,8 @@
     .brand { font-size: 2.4rem; }
     .brand .accent { font-size: 0.45em; letter-spacing: 1px; }
     .tagline { font-size: 0.9rem; }
+    .projects { padding: 30px 16px 60px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 14px; }
     footer { font-size: 0.76rem; }
   }
 </style>
@@ -254,6 +334,90 @@
     </a>
   </div>
 </header>
+
+<section class="projects">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">A selection of open-source work and experiments</p>
+
+  <div class="projects-grid">
+
+    <a class="project-card" href="https://github.com/fouad-salehi/wright" target="_blank" rel="noopener">
+      <div class="p-name">Wright</div>
+      <div class="p-desc">A minimal, utility-first CSS engine for building responsive interfaces with clean markup.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/digit-based-multiplication" target="_blank" rel="noopener">
+      <div class="p-name">Digit-Based Multiplication</div>
+      <div class="p-desc">An algorithmic playground for multiplying large numbers digit by digit.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/logarithmic-loop-complexity" target="_blank" rel="noopener">
+      <div class="p-name">Logarithmic Loop Complexity</div>
+      <div class="p-desc">Experiments and analysis on reducing loop complexity from linear to logarithmic.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/object-scope" target="_blank" rel="noopener">
+      <div class="p-name">Object Scope</div>
+      <div class="p-desc">A deep dive into JavaScript scope, closures, and object-level state management.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/dom-rander" target="_blank" rel="noopener">
+      <div class="p-name">DOM Rander</div>
+      <div class="p-desc">A lightweight rendering utility for efficient DOM updates and diffing.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/presence-engine" target="_blank" rel="noopener">
+      <div class="p-name">Presence Engine</div>
+      <div class="p-desc">Real-time presence tracking system for multi-section teams with WebSocket updates.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/windows-set-static-ip" target="_blank" rel="noopener">
+      <div class="p-name">Windows Set Static IP</div>
+      <div class="p-desc">A quick utility to configure a static IP address on Windows machines.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/universe-26-cursor-trail" target="_blank" rel="noopener">
+      <div class="p-name">Universe 26 Cursor Trail</div>
+      <div class="p-desc">A cosmic cursor trail effect built with vanilla JavaScript and canvas.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/ip-range-calculator" target="_blank" rel="noopener">
+      <div class="p-name">IP Range Calculator</div>
+      <div class="p-desc">Calculate IP ranges, subnets, and CIDR blocks with a clean, fast interface.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/odoo-live-price-formatter" target="_blank" rel="noopener">
+      <div class="p-name">Odoo Live Price Formatter</div>
+      <div class="p-desc">Format and display live Odoo product prices with locale-aware number formatting.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/wright-for-tailwind" target="_blank" rel="noopener">
+      <div class="p-name">Wright for Tailwind</div>
+      <div class="p-desc">A Wright adapter that brings its syntax into Tailwind CSS projects.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/wright-for-bootstrap" target="_blank" rel="noopener">
+      <div class="p-name">Wright for Bootstrap</div>
+      <div class="p-desc">Use Wright utilities alongside Bootstrap without style conflicts.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/wright-for-vanilla" target="_blank" rel="noopener">
+      <div class="p-name">Wright for Vanilla</div>
+      <div class="p-desc">Wright in pure vanilla environments — no build step required.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/sql-foundry" target="_blank" rel="noopener">
+      <div class="p-name">SQL Foundry</div>
+      <div class="p-desc">A toolkit for crafting, testing, and organizing SQL queries with ease.</div>
+    </a>
+
+    <a class="project-card" href="https://github.com/fouad-salehi/github-terminal-explorer" target="_blank" rel="noopener">
+      <div class="p-name">GitHub Terminal Explorer</div>
+      <div class="p-desc">Browse GitHub repositories from the terminal with a fast, keyboard-driven UI.</div>
+    </a>
+
+  </div>
+</section>
 
 <footer>
   <span class="rights">&copy; 2026 Fouad Salehi — All Rights Reserved</span>
